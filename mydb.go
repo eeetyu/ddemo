@@ -10,14 +10,14 @@ type MyDb struct {
 	*gorm.DB
 }
 
-var Db MyDb
+var DbClient MyDb
 
-func InitDb() {
-	dsn := "root:921110895@tcp(127.0.0.1:3306)/gotest?charset=utf8mb4&parseTime=True&loc=Local"
+func (mydb *MyDb) InitDb() {
+	dsn := "sun:aA921110895@tcp(111.62.122.237:3306)/sun_demo?charset=utf8mb4&parseTime=True&loc=Local"
 	var err error
-	Db.DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	mydb.DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
 		panic(err)
 	}
-	Db.IsInit = true
+	mydb.IsInit = true
 }

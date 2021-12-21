@@ -10,18 +10,18 @@ import (
 )
 
 func main() {
-	client, err := gotest.NewClient("hello", client.WithHostPorts("0.0.0.0:8888"))
+	client, err := gotest.NewClient("hello", client.WithHostPorts("127.0.0.1:8888"))
 	if err != nil {
 		log.Fatal(err)
 	}
-	req := &api.AddRequest{ID: 1, UserID: 100, RoomID: 200, Price: 66, Time: time.Now().Format(time.ANSIC),
-		ProductID: 1111}
-	resp, err := client.Add(context.Background(), req)
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.Println(resp)
-	time.Sleep(time.Second)
+	//req := &api.AddRequest{ID: 1, UserID: 100, RoomID: 200, Price: 66, Time: time.Now().Format(time.ANSIC),
+	//	ProductID: 1111}
+	//resp, err := client.Add(context.Background(), req)
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+	//log.Println(resp)
+	//time.Sleep(time.Second)
 	//
 	//req = &api.AddRequest{ID:2,UserID: 110,RoomID: 200,Price: 166,Time: time.Now().Format(time.ANSIC),
 	//	ProductID: 11121}
