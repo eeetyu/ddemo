@@ -1,7 +1,3 @@
-FROM golang:1.16.6-alpine
+FROM centos:7
+COPY test_server ./test_server
 
-RUN apk update && apk add git
-
-WORKDIR /code
-
-COPY . .
