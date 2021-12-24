@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	client, err := gotest.NewClient("hello", client.WithHostPorts("127.0.0.1:8888"))
+	client, err := gotest.NewClient("hello", client.WithHostPorts("172.21.3.62:80"))
 	if err != nil {
 		log.Fatal(err)
 	}
